@@ -90,10 +90,6 @@ We recommend [pm2](http://pm2.keymetrics.io/) as it has several useful features 
 
 ## Code Coverage
 Get code coverage summary on executing `yarn test`
-![Code Coverage Text Summary](https://cloud.githubusercontent.com/assets/4172932/12827832/a0531e70-cba7-11e5-9b7c-9e7f833d8f9f.JPG)
-
-`yarn test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
-![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
 
 ## Docker
 
