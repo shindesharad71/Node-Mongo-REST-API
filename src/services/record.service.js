@@ -1,7 +1,7 @@
-const { User } = require('../models');
+const { Record } = require('../models');
 
 /**
- * Query for users
+ * Query for records
  * @param {Object} filter - Mongo filter
  * @param {Object} options - Query options
  * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
@@ -9,11 +9,12 @@ const { User } = require('../models');
  * @param {number} [options.page] - Current page (default = 1)
  * @returns {Promise<QueryResult>}
  */
-const queryUsers = async (filter, options) => {
-  const users = await User.paginate(filter, options);
-  return users;
+const queryRecords = async (filter, options) => {
+  // const records = await Record.paginate(filter, options);
+  const records = await Record.find({}).limit(4);
+  return records;
 };
 
 module.exports = {
-  queryUsers
+  queryRecords
 };

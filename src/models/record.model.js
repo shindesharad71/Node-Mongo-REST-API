@@ -1,29 +1,24 @@
 const mongoose = require('mongoose');
 const { toJSON, paginate } = require('./plugins');
 
-const userSchema = mongoose.Schema(
+const recordSchema = mongoose.Schema(
   {
-    name: {
+    key: {
       type: String,
       required: true,
       trim: true,
     },
-    email: {
+    value: {
       type: String,
       required: true,
       unique: true,
       trim: true,
       lowercase: true
     },
-    password: {
+    counts: {
       type: String,
-      required: true,
-      trim: true
-    },
-    isEmailVerified: {
-      type: Boolean,
-      default: false,
-    },
+      required: true
+    }
   },
   {
     timestamps: true,
@@ -31,12 +26,12 @@ const userSchema = mongoose.Schema(
 );
 
 // add plugin that converts mongoose to json
-userSchema.plugin(toJSON);
-userSchema.plugin(paginate);
+recordSchema.plugin(toJSON);
+recordSchema.plugin(paginate);
 
 /**
- * @typedef User
+ * @typedef Record
  */
-const User = mongoose.model('User', userSchema);
+const Record = mongoose.model('Record', recordSchema);
 
-module.exports = User;
+module.exports = Record;
