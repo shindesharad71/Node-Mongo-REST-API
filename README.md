@@ -6,8 +6,8 @@ A Node, MongoDB Based REST API Challenge.
 
 Clone the repo:
 ```sh
-git clone git@github.com:kunalkapadia/express-mongoose-es6-rest-api.git
-cd express-mongoose-es6-rest-api
+git clone git@github.com:shindesharad71/Node-Mongo-REST-API.git
+cd Node-Mongo-REST-API
 ```
 
 Install yarn:
