@@ -8,7 +8,7 @@ router.get('/health-check', (req, res) =>
   res.send('OK')
 );
 
-// mount user records at /records
+// mount records at /records
 router.use('/records', recordRoutes);
 
 module.exports = router;
