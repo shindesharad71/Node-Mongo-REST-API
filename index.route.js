@@ -1,5 +1,5 @@
 const express = require('express');
-const userRoutes = require('./server/record/record.route');
+const recordRoutes = require('./server/record/record.route');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -8,7 +8,7 @@ router.get('/health-check', (req, res) =>
   res.send('OK')
 );
 
-// mount user routes at /users
+// mount user records at /records
 router.use('/records', recordRoutes);
 
 module.exports = router;
