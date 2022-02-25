@@ -1,18 +1,20 @@
 language: node_js
 node_js:
-  - "8.10"
-  - "9.9"
+  - '12'
 services:
   - mongodb
-cache:
-  directories:
-  - node_modules
-git:
-  depth: 3
+cache: yarn
+branches:
+  only:
+    - master
+env:
+  global:
+    - PORT=3000
+    - MONGODB_URL=mongodb://localhost:27017/node-boilerplate
+    - JWT_SECRET=thisisasamplesecret
+    - JWT_ACCESS_EXPIRATION_MINUTES=30
+    - JWT_REFRESH_EXPIRATION_DAYS=30
 script:
-  - yarn test:check-coverage
-after_script:
-  - yarn report-coverage
-before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.5.1
-  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn lint
+  - yarn test
+after_success: yarn coverage:coveralls

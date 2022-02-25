@@ -1,24 +1,15 @@
-# Use latest node version 8.x
-FROM node:8.10.0
+FROM node:alpine
 
-# create app directory in container
-RUN mkdir -p /app
+RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
-# set /app directory as default working directory
-WORKDIR /app
+WORKDIR /usr/src/node-app
 
-# only copy package.json initially so that `RUN yarn` layer is recreated only
-# if there are changes in package.json
-ADD package.json yarn.lock /app/
+COPY package.json yarn.lock ./
 
-# --pure-lockfile: Don’t generate a yarn.lock lockfile
-RUN yarn --pure-lockfile
+USER node
 
-# copy all file from current dir to /app in container
-COPY . /app/
+RUN yarn install --pure-lockfile
 
-# expose port 4040
-EXPOSE 4040
+COPY --chown=node:node . .
 
-# cmd to start service
-CMD [ "yarn", "start" ]
+EXPOSE 3000
