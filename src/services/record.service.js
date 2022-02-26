@@ -18,6 +18,7 @@ const queryRecords = async (options) => {
 
   const projection = {
     $project: {
+      _id: 0,
       key: '$key',
       createdAt: '$createdAt',
       totalCount: { $sum: '$counts' },
