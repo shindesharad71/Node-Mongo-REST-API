@@ -1,1 +1,1 @@
-module.exports.userController = require('./user.controller');
+module.exports.recordController = require('./record.controller');

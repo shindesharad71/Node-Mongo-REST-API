@@ -12,6 +12,10 @@ Get records based on `startDate`, `endDate`, `minCount` and `maxCount`
 
 `GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>`
 
+Working example -
+
+https://getir-sharz.herokuapp.com/records?startDate=2016-01-26&endDate=2018-02-02&minCount=2700&maxCount=3000
+
 ## Installation
 
 If you would still prefer to do the installation manually, follow these steps:
