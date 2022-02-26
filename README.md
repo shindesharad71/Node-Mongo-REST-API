@@ -8,7 +8,9 @@ List of available routes:
 
 **Record routes**:
 
-`GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>` - get records
+Get records based on `startDate`, `endDate`, `minCount` and `maxCount`
+
+`GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>`
 
 ## Installation
 
