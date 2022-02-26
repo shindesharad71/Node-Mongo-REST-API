@@ -18,7 +18,7 @@ https://getir-sharz.herokuapp.com/records?startDate=2016-01-26&endDate=2018-02-0
 
 ## Demo
 
-![Demo](demo.mp4)
+![Demo](demo.gif)
 
 ## Installation
 
