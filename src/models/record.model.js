@@ -16,12 +16,12 @@ const recordSchema = mongoose.Schema(
       lowercase: true
     },
     counts: {
-      type: String,
+      type: [Number],
       required: true
     }
   },
   {
-    timestamps: true,
+    timestamps: { createdAt: 'createdAt' },
   }
 );
 
