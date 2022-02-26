@@ -2,6 +2,14 @@
 
 A project for quickly building RESTful APIs using Node.js, Express, and Mongoose.
 
+## API Endpoints
+
+List of available routes:
+
+**Record routes**:
+
+`GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>` - get records
+
 ## Installation
 
 If you would still prefer to do the installation manually, follow these steps:
@@ -109,14 +117,6 @@ src\
  |--app.js          # Express app
  |--index.js        # App entry point
 ```
-
-### API Endpoints
-
-List of available routes:
-
-**Record routes**:
-
-`GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>` - get records
 
 ## Error Handling
 
