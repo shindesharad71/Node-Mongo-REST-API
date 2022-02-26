@@ -7,12 +7,34 @@ const { Record } = require('../models');
  */
 const queryRecords = async (options) => {
   const { startDate, endDate, minCount, maxCount } = options;
-  const records = await Record.find({
-    createdAt: {
-      $gt: startDate,
-      $lt: endDate
+  const timeRange = {
+    $match: {
+      createdAt: {
+        $gte: new Date(startDate),
+        $lte: new Date(endDate),
+      }
     }
-  }).limit(2);
+  };
+
+  const projection = {
+    $project: {
+      key: '$key',
+      createdAt: '$createdAt',
+      totalCount: { $sum: '$counts' },
+    }
+  };
+
+  const countRange = {
+    $match: {
+      totalCount: {
+        $gte: Number(minCount),
+        $lte: Number(maxCount),
+      },
+    }
+  };
+
+  const pipeline = [timeRange, projection, countRange];
+  const records = await Record.aggregate(pipeline).exec();
   return records;
 };
 
