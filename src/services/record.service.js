@@ -12,8 +12,8 @@ const queryRecords = async (options) => {
       createdAt: {
         $gte: new Date(startDate),
         $lte: new Date(endDate),
-      }
-    }
+      },
+    },
   };
 
   const projection = {
@@ -22,7 +22,7 @@ const queryRecords = async (options) => {
       key: '$key',
       createdAt: '$createdAt',
       totalCount: { $sum: '$counts' },
-    }
+    },
   };
 
   const countRange = {
@@ -31,7 +31,7 @@ const queryRecords = async (options) => {
         $gte: Number(minCount),
         $lte: Number(maxCount),
       },
-    }
+    },
   };
 
   const pipeline = [timeRange, projection, countRange];
@@ -40,5 +40,5 @@ const queryRecords = async (options) => {
 };
 
 module.exports = {
-  queryRecords
+  queryRecords,
 };

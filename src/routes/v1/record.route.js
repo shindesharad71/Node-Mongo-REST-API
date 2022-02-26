@@ -5,6 +5,6 @@ const recordValidation = require('../../validations/record.validation');
 
 const router = express.Router();
 
-router.get('/', validate(recordValidation.getRecords), recordController.getRecords)
+router.get('/', validate(recordValidation.getRecords), recordController.getRecords);
 
 module.exports = router;

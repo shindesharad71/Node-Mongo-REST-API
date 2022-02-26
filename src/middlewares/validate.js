@@ -11,10 +11,12 @@ const validate = (schema) => (req, res, next) => {
     .validate(object);
 
   if (error) {
-    const errorMessage = error.details.map((details) => {
-      const msg = details.message.replace(/"(.+)"/g, '$1');
-      return msg;
-    }).join(', ');
+    const errorMessage = error.details
+      .map((details) => {
+        const msg = details.message.replace(/"(.+)"/g, '$1');
+        return msg;
+      })
+      .join(', ');
     return next(new ApiError(httpStatus.BAD_REQUEST, errorMessage));
   }
   Object.assign(req, value);

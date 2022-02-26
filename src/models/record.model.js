@@ -13,12 +13,12 @@ const recordSchema = mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
-      lowercase: true
+      lowercase: true,
     },
     counts: {
       type: [Number],
-      required: true
-    }
+      required: true,
+    },
   },
   {
     timestamps: { createdAt: 'createdAt' },

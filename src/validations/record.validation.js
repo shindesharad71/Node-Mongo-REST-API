@@ -5,10 +5,10 @@ const getRecords = {
     startDate: Joi.string().required(),
     endDate: Joi.string().required(),
     minCount: Joi.number().required(),
-    maxCount: Joi.number().required()
+    maxCount: Joi.number().required(),
   }),
 };
 
 module.exports = {
-  getRecords
+  getRecords,
 };

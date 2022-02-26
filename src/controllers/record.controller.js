@@ -7,12 +7,12 @@ const getRecords = catchAsync(async (req, res) => {
   const result = await recordService.queryRecords(options);
   response = {
     code: 0,
-    msg: "Success",
-    records: result
-  }
+    msg: 'Success',
+    records: result,
+  };
   res.send(response);
 });
 
 module.exports = {
-  getRecords
+  getRecords,
 };
