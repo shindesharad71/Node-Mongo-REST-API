@@ -9,7 +9,7 @@ If you would still prefer to do the installation manually, follow these steps:
 Clone the repo:
 
 ```bash
-git clone --depth 1 https://github.com/shindesharad71/Node-Mongo-REST-API.git
+git clone https://github.com/shindesharad71/Node-Mongo-REST-API.git
 cd Node-Mongo-REST-API
 ```
 
@@ -114,7 +114,7 @@ src\
 
 List of available routes:
 
-**Record routes**:\
+**Record routes**:
 
 `GET /records?startDate=<START_DATE>&endDate=<END_DATE>&minCount=<COUNT>&maxCount=<COUNT>` - get records
 
